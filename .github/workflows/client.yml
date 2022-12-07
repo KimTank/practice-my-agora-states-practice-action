@@ -3,7 +3,7 @@ name: client
 on:
   push:
     branches:
-      - <?>
+      - reference
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -11,10 +11,10 @@ jobs:
       - name: Checkout source code.
         uses: actions/checkout@v2
       - name: Install dependencies
-        run: <?>
+        run: npm install
         working-directory: ./my-agora-states-client
       - name: Build
-        run: <?>
+        run: npm run build
         working-directory: ./my-agora-states-client
       - name: SHOW AWS CLI VERSION
         env:
